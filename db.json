@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "VladPut",
+      "firstName": "Vladimir",
+      "lastName": "Putin",
+      "email": "vladi@mk.com",
+      "isAdmin": true,
+      "twoots": [
+        {
+          "id": 1,
+          "content": "Earth Realm is the best!"
+        },
+        {
+          "id": 2,
+          "content": "Shao Kahn suck ballz!"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "username": "Donaldcho",
+      "firstName": "Donald",
+      "lastName": "Trump",
+      "email": "dony.tr@mk.com",
+      "isAdmin": false,
+      "twoots": []
+    },
+    {
+      "id": 3,
+      "username": "RumRad",
+      "firstName": "Rumen",
+      "lastName": "Radev",
+      "email": "rum.rad@mk.com",
+      "isAdmin": false,
+      "twoots": []
+    },
+    {
+      "id": 4,
+      "username": "AngMerk",
+      "firstName": "Angela",
+      "lastName": "Markel",
+      "email": "ang.merk@mk.com",
+      "isAdmin": false,
+      "twoots": []
+    }
+  ]
+}
