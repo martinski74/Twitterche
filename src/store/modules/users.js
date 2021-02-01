@@ -1,6 +1,6 @@
-import axios from 'axios';
 
 
+// const url = 'http://localhost:3000/users';
 const state = {
 	users:[],
 	currentUser: {},
@@ -10,10 +10,10 @@ const state = {
 
 const actions = {
 async	getUsers({commit}){
-		const res = await axios.get('http://localhost:3000/users')
+		const res = await require('../db.json')
 		
-		commit('GET_USERS', res.data)
-		return res;
+		commit('GET_USERS', res.users)
+		return res.users;
 	}
 };
 
