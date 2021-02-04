@@ -11,28 +11,55 @@
 					<label :class="{ makeRed: limit.length > 80 }" for="newPost"
 						><strong>New Tweet:</strong>({{ limit.length }}/80)</label
 					>
-					<textarea v-model="limit" class="form-control" name="newPost" id="newPost" rows="4" required></textarea>
+					<textarea
+						v-model="limit"
+						class="form-control"
+						name="newPost"
+						id="newPost"
+						rows="4"
+						required
+					></textarea>
 				</form>
 				<div class="form-group create-post-type mb-4">
-					<label :class="{ makeRed: limit.length > 80 }" for="twitt-type"><strong>Type:</strong></label>
+					<label :class="{ makeRed: limit.length > 80 }" for="twitt-type"
+						><strong>Type:</strong></label
+					>
 					<select id="twitt-type" class="form-control mb-2" v-model="selected">
 						<option value="">-- Please choose an option --</option>
 						<option value="Draft">Draft</option>
 						<option value="Instant Tweet">Instant Tweet</option>
 					</select>
-					<button @click="postTwitt()" type="button" class="btn btn-info form-control">
+					<button
+						@click="postTwitt()"
+						type="button"
+						class="btn btn-info form-control"
+					>
 						Post Tweet
 					</button>
 				</div>
-				<button v-if="isAdmin" @click="showAdminPanel" type="button" class="admin btn form-control">Admin Panel</button>
-				<button @click="goHome" class="btn btn btn-info col-xs-2 mt-5"><i class="fas fa-arrow-left"></i> Back</button>
+				<button
+					v-if="isAdmin"
+					@click="showAdminPanel"
+					type="button"
+					class="admin btn form-control"
+				>
+					Admin Panel
+				</button>
+				<button @click="goHome" class="btn btn btn-info col-xs-2 mt-5">
+					<i class="fas fa-arrow-left"></i> Back
+				</button>
 			</div>
 
 			<!-- users twoots -->
+
 			<div class="col-sm-7">
 				<div class="user-twitt-holder">
 					<ul class="list-group">
-						<li v-for="(post, i) in selectedUser.twoots" :key="i" class="list-group-item mb-4">
+						<li
+							v-for="(post, i) in selectedUser.twoots"
+							:key="i"
+							class="list-group-item mb-4"
+						>
 							@{{ nickName }}<br />
 							{{ post.content }}
 						</li>
@@ -61,7 +88,11 @@ export default {
 	},
 	methods: {
 		postTwitt() {
-			if (this.limit.length <= 80 && this.selected === 'Instant Tweet' && this.limit.length > 0) {
+			if (
+				this.limit.length <= 80 &&
+				this.selected === 'Instant Tweet' &&
+				this.limit.length > 0
+			) {
 				this.selectedUser.twoots.unshift({ content: this.limit });
 
 				this.limit = '';
