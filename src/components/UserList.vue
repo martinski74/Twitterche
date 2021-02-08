@@ -31,7 +31,6 @@ export default {
 	},
 	async created() {
 		await this.getUsers();
-		console.log(this.users);
 	},
 };
 </script>

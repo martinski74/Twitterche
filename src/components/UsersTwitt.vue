@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
 	data() {
@@ -87,16 +87,20 @@ export default {
 		...mapState('users', ['users', 'currentUser']),
 	},
 	methods: {
+		...mapActions('users', ['getUsers', 'updateUser']),
 		postTwitt() {
 			if (
 				this.limit.length <= 80 &&
 				this.selected === 'Instant Tweet' &&
 				this.limit.length > 0
 			) {
-				this.selectedUser.twoots.unshift({ content: this.limit });
+				this.selectedUser.twoots.unshift({
+					content: this.limit,
+				});
+				this.updateUser(this.selectedUser);
 
 				this.limit = '';
-				console.log(this.$route);
+				this.getUsers();
 			} else {
 				alert('Please fill the text box and/or choice propper type!');
 			}

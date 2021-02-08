@@ -43,7 +43,11 @@
       "lastName": "Markel",
       "email": "ang.merk@mk.com",
       "isAdmin": false,
-      "twoots": []
+      "twoots": [
+        {
+          "content": "dfdfdfd"
+        }
+      ]
     }
   ]
 }
